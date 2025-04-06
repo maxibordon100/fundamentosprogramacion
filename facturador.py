@@ -28,18 +28,21 @@ def loadTransactionData():
         article = input('Ingrese código del artículo (end para finalizar): ').strip()
 
     print('El total de la venta es ',total)
-    questionDiscount = input('Desea agregar un descuento (%) (y/n): ').strip()
-    while (questionDiscount == 'y'):
-        discount = float(input('Ingrese descuento: ').strip())
-        discounts.append(discount)
-        questionDiscount = input('Desea agregar un descuento (%) (y/n): ').strip()
 
-    questionTaxes = input('Desea agregar un impuesto (%)? (y/n): ').strip()
-    while (questionTaxes == 'y'):
-        tax = float(input('Ingrese importe (y/n)').strip())
+
+    questionTaxes = input('Desea agregar un impuesto ? (y/n): ').strip()
+    while (questionTaxes != 'n'):
+        tax = float(input('Ingrese porcentaje: ').strip())
         taxes.append(tax)
         questionTaxes = input('Desea agregar un impuesto (%)? (y/n): ').strip()
-    calculate(total,discounts,taxes)
+
+
+    questionDiscount = input('Desea agregar un descuento (y/n): ').strip()
+    while (questionDiscount != 'n'):
+        discount = float(input('Ingrese procentaje: ').strip())
+        discounts.append(discount)
+        questionDiscount = input('Desea agregar un descuento (y/n): ').strip()
+    calculate(total, discounts, taxes)
 
 
 def main():
