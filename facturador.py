@@ -8,10 +8,10 @@ def calculate(total,discounts,taxes):
     """
     for tax in taxes:
          total=total + (total * (tax/100))
-    print('El total con impuestos es ',total)
+    print('El precio con los impuestos sin los descuentos es ',total)
     for discount in discounts:
           total=total - (total * (discount/100))
-    print('El total con descuentos es ',total)
+    print('El precio final es ',total)
 
 def loadTransactionData():
     """
